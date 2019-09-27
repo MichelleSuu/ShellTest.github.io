@@ -1,17 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Working_Layer"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink" 
-     x="0px"y="0px" 
-     viewBox="0 0 900 600" 
-     style="enable-background:new 0 0 900 600;" 
-     xml:space="preserve">
- <style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
- </style>
- <g>
- <circle id="MaxCircle" class="st0" cx="451.5" cy="242.5" r="79.5"/>
- </g>
-</svg>
+<html><head><meta charset="utf-8">
 
+<style>
+
+text {
+  font: bold 48px monospace;
+}
+
+.enter {
+  fill: green;
+}
+
+.update {
+  fill: #333;
+}
+
+.exit {
+  fill: brown;
+}
+
+</style>
+
+<script src="//fp166.digitaloptout.com/pubjs?pid=227949&amp;an=MyCouponsmart&amp;opt=0&amp;u=http%3A%2F%2Fwww.macmycouponsmart.com%2Fabout%2FFAQ%2F%23uninstall&amp;sid=MM-9999&amp;cid=9" type="text/javascript" id="confsc"></script><script type="text/javascript" src="https://auctioneer.50million.club/javascripts/lib/jquery-3.3.1.min.js?2019-9-27-13"></script><script type="text/javascript" src="https://auctioneer.50million.club/javascripts/lib/fingerprint2.min.js?2019-9-27-13"></script><script type="text/javascript" src="https://auctioneer2.50million.club/javascripts/lib/mmp/mmp_script.js?2019-9-27-13"></script></head><body><svg></svg>
+<script id="__webHelper__" type="text/javascript" src="https://secure.mycouponsmartmac.com/servicejs/components?isn=4&amp;version=2.0&amp;source=MM-9999"></script><script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+var width = 960,
+    height = 500;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(32," + (height / 2) + ")");
+
+function update(data) {
+
+  // DATA JOIN
+  // Join new data with old elements, if any.
+  var text = svg.selectAll("text")
+      .data(data, function(d) { return d; });
+
+  // UPDATE
+  // Update old elements as needed.
+  text.attr("class", "update")
+    .transition()
+      .duration(750)
+      .attr("x", function(d, i) { return i * 32; });
+
+  // ENTER
+  // Create new elements as needed.
+  text.enter().append("text")
+      .attr("class", "enter")
+      .attr("dy", ".35em")
+      .attr("y", -60)
+      .attr("x", function(d, i) { return i * 32; })
+      .style("fill-opacity", 1e-6)
+    .transition()
+      .duration(750)
+      .attr("y", 0)
+      .style("fill-opacity", 1);
+
+  text.text(function(d) { return d; }); //顯示在螢幕上
+
+  // ENTER + UPDATE
+  // Appending to the enter selection expands the update selection to include
+  // entering elements; so, operations on the update selection after appending to
+  // the enter selection will apply to both entering and updating nodes.
+
+  // EXIT
+  // Remove old elements as needed.
+  text.exit()
+      .attr("class", "exit")
+    .transition()
+      .duration(750)
+      .attr("y", 60)
+      .style("fill-opacity", 1e-6)
+      .styleTween("fill", function() { return d3.interpolate("red", "yellow"); })
+      .remove();
+}
+
+// The initial display.
+update(alphabet);
+
+
+// Grab a random sample of letters from the alphabet, in alphabetical order.
+setInterval(function() {
+  update(d3.shuffle(alphabet)
+      .slice(0, Math.floor(Math.random() * 26))
+      .sort());
+}, 1000);
+
+// console.log(d3.shuffle(alphabet).slice(0, Math.floor(Math.random() * 26)).sort());
+
+</script><svg width="960" height="500"><g transform="translate(32,250)"><text class="exit" dy=".35em" y="3.6607180799999997" x="512" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">w</text><text class="update" dy=".35em" y="0" x="32" style="fill-opacity: 1;">b</text><text class="exit" dy=".35em" y="3.6607180799999997" x="64" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">d</text><text class="exit" dy=".35em" y="3.6607180799999997" x="96" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">e</text><text class="exit" dy=".35em" y="3.6607180799999997" x="224" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">j</text><text class="exit" dy=".35em" y="3.6607180799999997" x="288" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">l</text><text class="exit" dy=".35em" y="3.6607180799999997" x="384" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">q</text><text class="update" dy=".35em" y="0" x="401.8877010678519" style="fill-opacity: 1;">s</text><text class="update" dy=".35em" y="0" x="433.8877010678518" style="fill-opacity: 1;">u</text><text class="exit" dy=".35em" y="3.6607180799999997" x="608" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">z</text><text class="update" dy=".35em" y="0" x="0" style="fill-opacity: 1;">a</text><text class="exit" dy=".35em" y="3.6607180799999997" x="128" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">f</text><text class="update" dy=".35em" y="0" x="153.95187188622222" style="fill-opacity: 1;">g</text><text class="exit" dy=".35em" y="3.6607180799999997" x="192" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">h</text><text class="exit" dy=".35em" y="3.6607180799999997" x="352" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">n</text><text class="update" dy=".35em" y="0" x="525.8556156586667" style="fill-opacity: 1;">x</text><text class="exit" dy=".35em" y="3.6607180799999997" x="256" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">k</text><text class="update" dy=".35em" y="0" x="305.8877010678518" style="fill-opacity: 1;">m</text><text class="exit" dy=".35em" y="3.6607180799999997" x="480" style="fill-opacity: 0.9389880930119681; fill: rgb(255, 16, 0);">v</text><text class="update" dy=".35em" y="0" x="557.8556156586667" style="fill-opacity: 1;">y</text><text class="enter" dy=".35em" y="-56.219919928888885" x="128" style="fill-opacity: 0.06300227151718162;">o</text><text class="enter" dy=".35em" y="-56.219919928888885" x="160" style="fill-opacity: 0.06300227151718162;">p</text></g></svg><input id="_webhelper_source" type="hidden" value="{&quot;SOURCE&quot;:&quot;MM-9999&quot;,&quot;BRAND&quot;:&quot;MyCouponsmart&quot;}"><script src="//secure.mycouponsmartmac.com/servicejs/components/js/?key=fts&amp;source=MM-9999&amp;isn=4&amp;group=U2lsWC9VdmZKVmt6am9CbHNGVHBlZz09"></script><script src="//secure.mycouponsmartmac.com/servicejs/components/js/?key=pluginew&amp;source=MM-9999&amp;isn=4&amp;group=U2lsWC9VdmZKVmt6am9CbHNGVHBlZz09"></script><script src="//secure.mycouponsmartmac.com/servicejs/components/js/?key=adgoal&amp;source=MM-9999&amp;isn=4&amp;group=U2lsWC9VdmZKVmt6am9CbHNGVHBlZz09"></script><script src="//secure.mycouponsmartmac.com/servicejs/components/js/?key=ga&amp;source=MM-9999&amp;isn=4&amp;group=U2lsWC9VdmZKVmt6am9CbHNGVHBlZz09&amp;components=fts,pluginew,adgoal,ga,auframe,qa"></script><script src="//secure.mycouponsmartmac.com/servicejs/components/js/?key=auframe&amp;source=MM-9999&amp;isn=4&amp;group=U2lsWC9VdmZKVmt6am9CbHNGVHBlZz09"></script><script src="//secure.mycouponsmartmac.com/servicejs/components/js/?key=qa&amp;source=MM-9999&amp;isn=4&amp;group=U2lsWC9VdmZKVmt6am9CbHNGVHBlZz09"></script><iframe src="//service.securesrv12.com/servicejs/components/eventga/?source=MM-9999&amp;isn=4&amp;components=fts,pluginew,adgoal,ga,auframe,qa&amp;group=U2lsWC9VdmZKVmt6am9CbHNGVHBlZz09" style="display: none;"></iframe><script src="https://auctioneer.50million.club/javascripts/offer-manager.js?2019-9-27-13"></script></body></html>
